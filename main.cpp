@@ -194,7 +194,9 @@ int main() {
     int N = 2;
     int longestName, longestSurname;
     stud Students[N];
-    Read(N, Students, longestName, longestSurname);
+    //Read(N, Students, longestName, longestSurname);
+    Read_from_file(Students, nr, longestName, longestSurname);
+    sort_By_firstName(Students);
     Write(N, Students, longestName, longestSurname);
 
     return 0;
