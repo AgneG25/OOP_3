@@ -1,0 +1,4 @@
+Jonas    Jonaitis    8 9 10 6 10 9
+Petras   Petraitis    7 10 8 5 4 6
+Antanas Antanaitis 7 6 8 5 3 5
+Vardas Vardaitis 7 6 5 4 3 7
