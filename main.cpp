@@ -39,9 +39,18 @@ struct stud {
     }
     double Average() {
         double S = 0;
+        double ave = 0;
+        
         for(int i = 0; i < homework.size(); i++) S+= homework[i];
-        double ave = S/homework.size();
-        return 0.4 * ave + 0.6 * exam;
+
+        try {
+            if (homework.size() == 0){
+                throw 0;
+            }
+            return 0.4 * ave + 0.6 * exam;
+        } catch (...) {
+            return 0;
+        }
     }
     double Med() {
         size_t size = homework.size();
@@ -101,7 +110,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
         S.firstName = firstName;
         S.secondName = secondName;
          
-        cout << "Jei norite, kad pazymiai butu automatiskai sugeneruojami, paspauskite 't, jei ne - 'n' " << endl;
+        cout << "Ar norite, kad pazymiai butu sugeneruojami automatiskai? t/n" << endl;
         cin >> ans;
         
         while (!((!cin.fail()) && ((ans == 't') || (ans == 'n')))) {
@@ -112,18 +121,24 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
         }
         
         if(ans == 't') {
-            do {
+
+            cout << "Jei norite sugeneruoti pazymi, spauskite 't', jei nebenorite - bet kuri kita klavisa." << endl;
+            cin >> ans;
+        
+            while(ans == 't') {
                 S.Random();
-                cout << "Jei norite sugeneruoti dar viena pazymi, spauskite 't', jei nebenorite - bet kuri kita klavisa." << endl;
+                cout << "Jei norite sugeneruoti pazymi, spauskite 't', jei nebenorite - bet kuri kita klavisa." << endl;
                 cin >> ans;
-            } while(ans == 't');
+            }
         }
         else {
-            do {
-            cout << "Iveskite pazymi: ";
-            cin >> mark;
-            
-            if(mark <= 10 && mark >=1){
+            cout << "Jei norite ivesti pazymi, spauskite 't', kitu atveju spauskite bet kuri klavisa." << endl;
+            cin >> ans;
+            while(ans == 't') {
+                cout << "Iveskite pazymi: ";
+                cin >> mark;
+
+                if(mark <= 10 && mark >=1){
                 S.homework.push_back(mark);
             }
             else {
@@ -136,7 +151,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
             }
             cout << "Jei norite ivesti dar viena pazymi, spauskite 't', kitu atveju spauskite bet kuri klavisa." << endl;
             cin >> ans;
-            } while(ans == 't');
+            }
             }
 
             cout << "Iveskite egzamino rezultata: ";
@@ -172,6 +187,8 @@ void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longe
     longestSurname = 0;
 
     std::ifstream ifs ("kursiokai.txt");
+
+    
 
     S.homework.clear();
     while(!ifs.eof()){
@@ -223,12 +240,12 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
     }
     else if (a == 'v'){
         cout << "Galutinis (Vid.)" << endl;
-        string line (longestName + longestSurname + 21, '-');
+        string line (longestName + longestSurname + 24, '-');
         cout << line << endl;
     }
     else {
         cout << "Galutinis (Vid.) Galutinis (Med.)" << endl;
-        string line (longestName + longestSurname + 38, '-');
+        string line (longestName + longestSurname + 41, '-');
         cout << line << endl;
     }
     
@@ -241,11 +258,18 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
             cout << left << setw(17) << fixed << setprecision(2) << i.Med();
         }
         else if (a == 'v'){
-            cout << left << setw(17) << fixed << setprecision(2) << i.Average();
+            if (i.Average() != 0)
+                cout << left << setw(17) << fixed << setprecision(2) << i.Average();
+            else
+                cout << left << setw(17) << fixed << setprecision(2) << "Dalyba is 0 negalima." << endl;
         }
         else {
              cout << left << setw(17) << fixed << setprecision(2) << i.Med();
-             cout << left << setw(17) << fixed << setprecision(2) << i.Average();
+
+            if (i.Average() != 0)
+                cout << left << setw(17) << fixed << setprecision(2) << i.Average();
+            else
+                cout << left << setw(17) << fixed << setprecision(2) << "Dalyba is 0 negalima." << endl;;
         }
         cout << endl;
     }
@@ -265,9 +289,9 @@ int main() {
     int nr = 5; // pazymiu skaicius
     int longestName, longestSurname;
     vector<stud> Students;
-    //Read(N, Students, longestName, longestSurname, nr);
-    Read_from_file(Students, nr, longestName, longestSurname);
-    sort_By_firstName(Students);
+    Read(N, Students, longestName, longestSurname, nr);
+    //Read_from_file(Students, nr, longestName, longestSurname);
+    //sort_By_firstName(Students);
     Write(Students, longestName, longestSurname);
 
     return 0;
