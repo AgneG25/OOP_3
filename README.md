@@ -7,3 +7,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ## [V0.2](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.2) (2019-02-19)
 * Atsirado galimybė nuskaityti duomenis iš failo.
 * Nuskaityti duomenys surikiuojami pagal vardą.
+
+## [v0.3](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.3) (2019-02-24)
+* Panaudotas Exception Handling (bet tik vienoje vietoje, reiks pildyti).
+* Naudojami header'iai.
