@@ -13,7 +13,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 * Naudojami header'iai.
 * Neatnaujintas makefile.
 
-## [v0.4](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.4) (2019-03-23)
+## [v0.4](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.4) (2019-03-03)
 * Sugeneruojami 5 nauji duomenų failai.
 * Mokiniai sugrupuojami ir išspausdinami į du skirtingus failus.
 * Matuojamas laikas(tiek kievieno naujo failo sugeneravimas, nuskaitymas ir sugrupavimas, tiek bendras programos laikas).
