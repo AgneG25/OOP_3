@@ -23,6 +23,7 @@ struct stud {
         double ave = 0;
         
         for(int i = 0; i < homework.size(); i++) S+= homework[i];
+        ave = S/homework.size();
 
         try {
             if (homework.size() == 0){
@@ -58,9 +59,11 @@ struct stud {
 };
 
 void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr);
-void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname);
+void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname, string filename);
 void Write (vector<stud> &Students, int &longestName, int &longestSurname);
-bool compare_By_firstName(const stud &a, const stud &b);
-void sort_By_firstName(vector<stud> &Students);
+bool Compare_By_firstName(const stud &a, const stud &b);
+void Sort_By_firstName(vector<stud> &Students);
+void New_Students (vector<stud> &Students, int nr, int &longestName, int &longestSurname);
+void Sort_Students_By_Average (int n, vector<stud> &Students);
 
 #endif

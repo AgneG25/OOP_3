@@ -12,6 +12,8 @@
 #include <stdlib.h> 
 #include <fstream>
 #include <string.h>
+#include <chrono>
+#include <ctype.h>
 
 using std::cout;
 using std::cin;
@@ -22,5 +24,6 @@ using std::setw;
 using std::setprecision;
 using std::fixed;
 using std::vector;
+using namespace std::chrono;
 
 #endif

@@ -1,14 +1,18 @@
 #include "functions.h"
 #include "libraries.h"
 
+void CheckLetter (string &name) {
+    if(islower(name[0]))
+        name[0] = toupper(name[0]);
+}
+
 void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr) {
+
     longestName = 0;
     longestSurname = 0;
     stud S = {};
-    double mark;
-    double exam;
-    int n;
-    int b;
+    double mark, exam;
+    int n, b;
     string firstName, secondName;
     char ans;
 
@@ -59,6 +63,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
         else {
             cout << "Jei norite ivesti pazymi, spauskite 't', kitu atveju spauskite bet kuri klavisa." << endl;
             cin >> ans;
+
             while(ans == 't') {
                 cout << "Iveskite pazymi: ";
                 cin >> mark;
@@ -103,7 +108,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
     }
     }
 //-------------------------------------------------------------------------
-void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname) {
+void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname, string filename) {
     int mark;
     stud S = {};
     string s;
@@ -111,12 +116,15 @@ void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longe
     longestName = 0;
     longestSurname = 0;
 
-    std::ifstream ifs ("kursiokai.txt");
-
-    S.homework.clear();
+    std::ifstream ifs (filename.c_str());
+    
     while(!ifs.eof()){
 
+        S.homework.clear();
         ifs >> S.firstName >> S.secondName;
+
+        CheckLetter(S.firstName);
+        CheckLetter(S.secondName);
 
         for(int j = 0; j < nr; j++){
             ifs >> mark;
@@ -131,6 +139,7 @@ void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longe
             longestSurname = S.secondName.size();
             Students.push_back(S);
     }
+        Students.pop_back();
 
         ifs.close();
     }
@@ -198,10 +207,59 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
     }
     }
 
-bool compare_By_firstName(const stud &a, const stud &b) {
+bool Compare_By_firstName(const stud &a, const stud &b) {
     return a.firstName < b.firstName;
 }
 
-void sort_By_firstName(vector<stud> &Students) {
-    std::sort(Students.begin(), Students.end(), compare_By_firstName);
+void Sort_By_firstName(vector<stud> &Students) {
+    std::sort(Students.begin(), Students.end(), Compare_By_firstName);
+}
+
+void New_Students (vector<stud> &Students, int nr, int &longestName, int &longestSurname){
+
+    int n = 10;
+    std::srand(std::time(nullptr));
+
+    for (int i = 1; i <= 5; i++) {
+        string file = std::to_string(i) + ".txt";
+        std::ofstream rf (file);
+            for (int j = 1; j <= n; j++) {
+                rf << "Vardas" + std::to_string(j) << " " << "Pavarde" + std::to_string(j) << " ";
+                for(int k = 0; k < 6; k++) {
+                    rf << std::rand() % 10 + 1 << " ";
+                }
+                rf << endl;
+            }
+        rf.close();
+        n *= 10;
+        Read_from_file(Students, nr, longestName, longestSurname, file);
+        Sort_Students_By_Average(i, Students);
+    }
+}
+
+void Sort_Students_By_Average (int n, vector<stud> &Students) {
+
+    auto start = high_resolution_clock::now();
+
+    int count = 0;
+    std::ofstream rf1 (std::to_string(n) + "vargsiukai.txt");
+    std::ofstream rf2 (std::to_string(n) + "galvociai.txt");
+
+    for (auto &i : Students) {
+        if(i.Average() >= 5) {
+            rf2 << i.firstName << " " << i.secondName << " ";
+            rf2 << fixed << setprecision(2)<< i.Average() << endl;
+        }
+        else {
+            rf1 << i.firstName << " " << i.secondName << " ";
+            rf1 << fixed << setprecision(2)<< i.Average() << endl;
+        }
+        count++;
+        Students.pop_back();
+    }
+    rf1.close();
+    rf2.close();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    cout << count << " elementu uzpildymas uztruko: " << diff.count()  << " s/n" << endl;
 }
