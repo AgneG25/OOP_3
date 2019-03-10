@@ -27,6 +27,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 ###### VECTOR
 `10 elementų užpildymas užtruko: 0.000458382 s/n`
+
 `100 elementų užpildymas užtruko: 0.00274016 s/n`
 
 `1000 elementų užpildymas užtruko: 0.00913537 s/`
