@@ -64,7 +64,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 `100000 elementų užpildymas užtruko: 0.267393 s/n`
 
-`Visos programos veikimas užtruko: 0.56778 s/n``
+`Visos programos veikimas užtruko: 0.56778 s/n`
 
 
 ---
