@@ -26,7 +26,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ##### Programos veikimo laikai, naudojant skirtingus konteinerius:
 
 ###### VECTOR
-`10 elementų užpildymas užtruko: 0.000458382 s/n
+`10 elementų užpildymas užtruko: 0.000458382 s/n`
 
 100 elementų užpildymas užtruko: 0.00274016 s/n
 
@@ -36,7 +36,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 100000 elementų užpildymas užtruko: 0.186875 s/n
 
-Visos programos veikimas užtruko: 0.5089 s/n`
+`Visos programos veikimas užtruko: 0.5089 s/n`
 
 ---
 ###### LIST
