@@ -7,8 +7,8 @@ int main() {
     int nr = 5; 
     int longestName, longestSurname;
     int N = 3;
-    vector<stud> Students;
-    vector<stud> Weak;
+    list<stud> Students;
+    list<stud> Weak;
     string file = "kursiokai.txt";
     //Read(N, Students, longestName, longestSurname, nr);
     //Read_from_file(Students, longestName, longestSurname, file);

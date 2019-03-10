@@ -62,13 +62,13 @@ struct stud {
     }
 };
 
-void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr);
-void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename);
-void Write (vector<stud> &Students, int &longestName, int &longestSurname);
+void Read (int N, list<stud> &Students, int &longestName, int &longestSurname, int nr);
+void Read_from_file(list<stud> &Students, int &longestName, int &longestSurname, string filename);
+void Write (list<stud> &Students, int &longestName, int &longestSurname);
 bool Compare_By_firstName(const stud &a, const stud &b);
-void Sort_By_firstName(vector<stud> &Students);
-void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak);
-void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak);
-void SortByMarks(vector<stud> &Students, vector<stud> &Weak);
+void Sort_By_firstName(list<stud> &Students);
+void New_Students (list<stud> &Students, int &longestName, int &longestSurname, list<stud> &Weak);
+void PrintByMarks (int n, list<stud> &Students, list<stud> &Weak);
+void SortByMarks(list<stud> &Students, list<stud> &Weak);
 
 #endif

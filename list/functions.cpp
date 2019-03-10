@@ -6,7 +6,7 @@ void CheckLetter (string &name) {
         name[0] = toupper(name[0]);
 }
 
-void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr) {
+/*void Read (int N, list<stud> &Students, int &longestName, int &longestSurname, int nr) {
 
     longestName = 0;
     longestSurname = 0;
@@ -106,9 +106,9 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
             longestSurname = S.secondName.size();
         Students.push_back(S);
     }
-    }
+    }*/
 //-------------------------------------------------------------------------
-void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename) {
+void Read_from_file(list<stud> &Students, int &longestName, int &longestSurname, string filename) {
     int mark;
     stud S = {};
     longestName = 0;
@@ -143,7 +143,7 @@ void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurnam
         ifs.close();
     }
 //-------------------------------------------------------------------------
-void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
+/*void Write (list<stud> &Students, int &longestName, int &longestSurname) {
 
     char a;
     cout << "Pasirinkite ka norite matyti: jei mediana, iveskite 'm', jei vidurki - 'v', jei abu - 'a'." << endl;
@@ -210,11 +210,11 @@ bool Compare_By_firstName(const stud &a, const stud &b) {
     return a.firstName < b.firstName;
 }
 
-void Sort_By_firstName(vector<stud> &Students) {
+void Sort_By_firstName(list<stud> &Students) {
     std::sort(Students.begin(), Students.end(), Compare_By_firstName);
 }
-
-void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak){
+*/
+void New_Students (list<stud> &Students, int &longestName, int &longestSurname, list<stud> &Weak){
 
 
     for (int i = 1; i <= 5; i++) {
@@ -227,7 +227,7 @@ void New_Students (vector<stud> &Students, int &longestName, int &longestSurname
     }
 }
 
-void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak) {
+void PrintByMarks (int n, list<stud> &Students, list<stud> &Weak) {
 
     auto start = high_resolution_clock::now();
 
@@ -254,9 +254,9 @@ void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak) {
     cout << count << " elementu uzpildymas uztruko: " << diff.count()  << " s/n" << endl;
 }
 
-void SortByMarks(vector<stud> &Students, vector<stud> &Weak) {
+void SortByMarks(list<stud> &Students, list<stud> &Weak) {
 
-    vector<stud> Strong;
+    list<stud> Strong;
 
     for (auto &i : Students) {
         if (i.Average() < 5) {
