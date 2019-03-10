@@ -27,28 +27,43 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 ###### VECTOR
 10 elementų užpildymas užtruko: 0.000458382 s/n
+
 100 elementų užpildymas užtruko: 0.00274016 s/n
+
 1000 elementų užpildymas užtruko: 0.00913537 s/
+
 10000 elementų užpildymas užtruko: 0.0201894 s/n
+
 100000 elementų užpildymas užtruko: 0.186875 s/n
+
 Visos programos veikimas užtruko: 0.5089 s/n
 
 ---
 ###### LIST
 10 elementų užpildymas užtruko: 0.000730686 s/n
+
 100 elementų užpildymas užtruko: 0.00124828 s/n
+
 1000 elementų užpildymas užtruko: 0.0124355 s/n
+
 10000 elementų užpildymas užtruko: 0.0286396 s/n
+
 100000 elementų užpildymas užtruko: 0.238687 s/n
+
 Visos programos veikimas užtruko: 0.548188 s/n
 
 ---
 ###### DEQUE
 10 elementu uzpildymas užtruko: 0.000673002 s/n
-100 elementų užpildymas užtruko: 0.000816094 s/n\
+
+100 elementų užpildymas užtruko: 0.000816094 s/n
+
 1000 elementų užpildymas užtruko: 0.00447744 s/n
+
 10000 elementų užpildymas užtruko: 0.0317397 s/n
+
 100000 elementų užpildymas užtruko: 0.267393 s/n
+
 Visos programos veikimas užtruko: 0.56778 s/n
 
 ---
