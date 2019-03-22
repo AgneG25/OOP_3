@@ -72,4 +72,4 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ##### 1 scenarijus
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 ###### VECTOR
-![](/home/agne/Pictures/Screenshot from 2019-03-22 16-05-42.png)
+
