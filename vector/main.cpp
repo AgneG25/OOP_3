@@ -9,12 +9,13 @@ int main() {
     int N = 3;
     vector<stud> Students;
     vector<stud> Weak;
+    vector<stud> Strong;
     string file = "kursiokai.txt";
     //Read(N, Students, longestName, longestSurname, nr);
     //Read_from_file(Students, longestName, longestSurname, file);
     //Sort_By_firstName(Students);
     //Write(Students, longestName, longestSurname);
-    New_Students (Students, longestName, longestSurname, Weak);
+    New_Students (Students, longestName, longestSurname, Weak, Strong);
     auto end = high_resolution_clock::now();
     duration<double> diff = end-start;
     cout << "Visos programos veikimas uztruko: " << diff.count() << " s/n" << endl;

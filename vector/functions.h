@@ -67,8 +67,8 @@ void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurnam
 void Write (vector<stud> &Students, int &longestName, int &longestSurname);
 bool Compare_By_firstName(const stud &a, const stud &b);
 void Sort_By_firstName(vector<stud> &Students);
-void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak);
-void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak);
-void SortByMarks(vector<stud> &Students, vector<stud> &Weak);
+void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak, vector<stud> &Strong);
+void PrintByMarks (int n, vector<stud> &Weak, vector<stud> &Strong);
+void SortByMarks(vector<stud> &Students, vector<stud> &Weak, vector<stud> &Strong);
 
 #endif

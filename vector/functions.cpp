@@ -214,20 +214,20 @@ void Sort_By_firstName(vector<stud> &Students) {
     std::sort(Students.begin(), Students.end(), Compare_By_firstName);
 }
 
-void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak){
+void New_Students (vector<stud> &Students, int &longestName, int &longestSurname, vector<stud> &Weak, vector<stud> &Strong) {
 
 
     for (int i = 1; i <= 5; i++) {
         string file = std::to_string(i) + ".txt";
         
         Read_from_file(Students, longestName, longestSurname, file);
-        SortByMarks(Students, Weak);
-        PrintByMarks(i, Students, Weak);
-        
+        SortByMarks(Students, Weak, Strong);
+        PrintByMarks(i, Weak, Strong);
+        Students.clear();
     }
 }
 
-void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak) {
+void PrintByMarks (int n, vector<stud> &Weak, vector<stud> &Strong) {
 
     auto start = high_resolution_clock::now();
 
@@ -235,11 +235,11 @@ void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak) {
     std::ofstream rf1 (std::to_string(n) + "vargsiukai.txt");
     std::ofstream rf2 (std::to_string(n) + "galvociai.txt");
     
-    for (auto &i : Students) {
+    for (auto &i : Strong) {
         rf2 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
         count++;
     }
-    Students.clear();
+    Strong.clear();
 
     for (auto &i : Weak) {
         rf1 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
@@ -251,12 +251,12 @@ void PrintByMarks (int n, vector<stud> &Students, vector<stud> &Weak) {
     rf2.close();
     auto end = high_resolution_clock::now();
     duration<double> diff = end-start;
-    cout << count << " elementu uzpildymas uztruko: " << diff.count()  << " s/n" << endl;
+    cout << count << " elementu spausdinimas uztruko: " << diff.count()  << " s/n" << endl;
 }
 
-void SortByMarks(vector<stud> &Students, vector<stud> &Weak) {
+void SortByMarks(vector<stud> &Students, vector<stud> &Weak, vector<stud> &Strong) {
 
-    vector<stud> Strong;
+    auto start = high_resolution_clock::now();
 
     for (auto &i : Students) {
         if (i.Average() < 5) {
@@ -266,6 +266,7 @@ void SortByMarks(vector<stud> &Students, vector<stud> &Weak) {
             Strong.push_back(i);
         }
     }
-    Students = Strong;
-    Strong.clear();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    cout << Students.size() << " elementu rusiavimas uztruko: " << fixed << setprecision(10) << diff.count()  << " s/n" << endl;
 }

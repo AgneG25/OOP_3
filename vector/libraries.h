@@ -14,7 +14,6 @@
 #include <string.h>
 #include <chrono>
 #include <ctype.h>
-#include <list>
 #include <random>
 #include <stdexcept>
 
@@ -27,7 +26,6 @@ using std::setw;
 using std::setprecision;
 using std::fixed;
 using std::vector;
-using std::list;
 using namespace std::chrono;
 
 #endif
