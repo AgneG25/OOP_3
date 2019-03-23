@@ -71,5 +71,76 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ## [v1.0]
 ##### 1 scenarijus
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
+
 ###### VECTOR
+10 elementu rusiavimas uztruko: 0.0000243400 s/n
+
+10 elementu spausdinimas uztruko: 0.0005911700 s/n
+
+100 elementu rusiavimas uztruko: 0.0001747690 s/n
+
+100 elementu spausdinimas uztruko: 0.0012181070 s/n
+
+1000 elementu rusiavimas uztruko: 0.0018891290 s/n
+
+1000 elementu spausdinimas uztruko: 0.0091860260 s/n
+
+10000 elementu rusiavimas uztruko: 0.0065936000 s/n
+
+10000 elementu spausdinimas uztruko: 0.0241980220 s/n
+
+100000 elementu rusiavimas uztruko: 0.0517505590 s/n
+
+100000 elementu spausdinimas uztruko: 0.2338830680 s/n
+
+Visos programos veikimas uztruko: 0.5563735260 s/n
+
+###### LIST
+
+10 elementu rusiavimas uztruko: 0.0000159940 s/n
+
+10 elementu spausdinimas uztruko: 0.0005599050 s/n
+
+100 elementu rusiavimas uztruko: 0.0001457720 s/n
+
+100 elementu spausdinimas uztruko: 0.0004429700 s/n
+
+1000 elementu rusiavimas uztruko: 0.0005196130 s/n
+
+1000 elementu spausdinimas uztruko: 0.0033575030 s/n
+
+10000 elementu rusiavimas uztruko: 0.0049818810 s/n
+
+10000 elementu spausdinimas uztruko: 0.0270387750 s/n
+
+100000 elementu rusiavimas uztruko: 0.0370642370 s/n
+
+100000 elementu spausdinimas uztruko: 0.2280732290 s/n
+
+Visos programos veikimas uztruko: 0.4932038040 s/n
+
+###### DEQUE
+
+10 elementu rusiavimas uztruko: 0.0000154860 s/n
+
+10 elementu spausdinimas uztruko: 0.0005208370 s/n
+
+100 elementu rusiavimas uztruko: 0.0001381620 s/n
+
+100 elementu spausdinimas uztruko: 0.0011169290 s/n
+
+1000 elementu rusiavimas uztruko: 0.0016535360 s/n
+
+1000 elementu spausdinimas uztruko: 0.0104824100 s/n
+
+10000 elementu rusiavimas uztruko: 0.0039641510 s/n
+
+10000 elementu spausdinimas uztruko: 0.0210640090 s/n
+
+100000 elementu rusiavimas uztruko: 0.0299174970 s/n
+
+100000 elementu spausdinimas uztruko: 0.2005428870 s/n
+
+Visos programos veikimas uztruko: 0.4539827490 s/n
+
 
