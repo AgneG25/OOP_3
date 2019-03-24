@@ -108,11 +108,9 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
     }
     }
 //-------------------------------------------------------------------------
-void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname, string filename) {
+void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename) {
     int mark;
     stud S = {};
-    string s;
-    int sTotal = 0;
     longestName = 0;
     longestSurname = 0;
 
@@ -120,19 +118,20 @@ void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longe
     
     while(!ifs.eof()){
 
-        S.homework.clear();
         ifs >> S.firstName >> S.secondName;
 
         CheckLetter(S.firstName);
         CheckLetter(S.secondName);
 
-        for(int j = 0; j < nr; j++){
-            ifs >> mark;
-            S.homework.push_back(mark);
-        }
         ifs >> S.exam;
-        ifs.ignore();
-
+        
+        if(ifs) {
+            S.homework.clear();
+            double mark;
+            while (ifs >> mark) S.homework.push_back(mark);
+            ifs.clear();
+        }
+        
         if (S.firstName.size() > longestName) 
             longestName = S.firstName.size();
         if (S.secondName.size() > longestSurname) 
@@ -215,51 +214,61 @@ void Sort_By_firstName(vector<stud> &Students) {
     std::sort(Students.begin(), Students.end(), Compare_By_firstName);
 }
 
-void New_Students (vector<stud> &Students, int nr, int &longestName, int &longestSurname){
+void New_Students (vector<stud> &Students, int &longestName, int &longestSurname) {
 
-    int n = 10;
-    std::srand(std::time(nullptr));
 
     for (int i = 1; i <= 5; i++) {
         string file = std::to_string(i) + ".txt";
-        std::ofstream rf (file);
-            for (int j = 1; j <= n; j++) {
-                rf << "Vardas" + std::to_string(j) << " " << "Pavarde" + std::to_string(j) << " ";
-                for(int k = 0; k < 6; k++) {
-                    rf << std::rand() % 10 + 1 << " ";
-                }
-                rf << endl;
-            }
-        rf.close();
-        n *= 10;
-        Read_from_file(Students, nr, longestName, longestSurname, file);
-        Sort_Students_By_Average(i, Students);
+        
+        Read_from_file(Students, longestName, longestSurname, file);
+        //SortByMarks(Students);
+        PrintByMarks(i, Students);
     }
 }
 
-void Sort_Students_By_Average (int n, vector<stud> &Students) {
+void PrintByMarks (int n, vector<stud> &Students) {
 
     auto start = high_resolution_clock::now();
-
+    vector<stud> Weak = SortByMarks(Students);
     int count = 0;
     std::ofstream rf1 (std::to_string(n) + "vargsiukai.txt");
     std::ofstream rf2 (std::to_string(n) + "galvociai.txt");
-
+    
     for (auto &i : Students) {
-        if(i.Average() >= 5) {
-            rf2 << i.firstName << " " << i.secondName << " ";
-            rf2 << fixed << setprecision(2)<< i.Average() << endl;
-        }
-        else {
-            rf1 << i.firstName << " " << i.secondName << " ";
-            rf1 << fixed << setprecision(2)<< i.Average() << endl;
-        }
+        rf2 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
         count++;
-        Students.pop_back();
     }
+    Students.clear();
+
+    for (auto &i : Weak) {
+        rf1 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
+        count++;
+    }
+    Weak.clear();
+
     rf1.close();
     rf2.close();
     auto end = high_resolution_clock::now();
     duration<double> diff = end-start;
-    cout << count << " elementu uzpildymas uztruko: " << diff.count()  << " s/n" << endl;
+    cout << count << " elementu spausdinimas uztruko: " << diff.count()  << " s/n" << endl;
+}
+
+bool Passed (stud &a) {
+    return (a.Average() >= 5);
+}
+
+vector<stud> SortByMarks(vector<stud> &Students) {
+
+    auto start = high_resolution_clock::now();
+    int n = Students.size();
+
+    vector<stud>::iterator it = stable_partition(Students.begin(), Students.end(), Passed);
+    vector<stud> Weak(it, Students.end());
+    Students.erase(it, Students.end());
+
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    cout << n << " elementu rusiavimas uztruko: " << fixed << setprecision(10) << diff.count()  << " s/n" << endl;
+    
+    return Weak;
 }

@@ -9,13 +9,17 @@ struct stud {
     vector<double> homework;
     double exam;
 
-    void RandomE() {
-        std::srand(std::time(nullptr));
-        exam = std::rand() % 10 + 1;
+    void RandomE() { //sugeneruojamas egzamino pazymys
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        std::uniform_int_distribution<int> dist(1, 10);
+        exam = dist(mt);
     }
-    void Random() {
-        std::srand(std::time(nullptr));
-        double r = std::rand() % 10 + 1;
+    void Random() { //sugeneruojamas namu darbu pazymys
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        std::uniform_int_distribution<int> dist(1, 10);
+        double r = dist(mt);
         homework.push_back(r);
     }
     double Average() {
@@ -25,7 +29,7 @@ struct stud {
         for(int i = 0; i < homework.size(); i++) S+= homework[i];
         ave = S/homework.size();
 
-        try {
+        try { //tikrinama ar yra namu darbu pazymiu
             if (homework.size() == 0){
                 throw 0;
             }
@@ -36,17 +40,17 @@ struct stud {
     }
     double Med() {
         size_t size = homework.size();
-        
         int m = 0;
+
         if (size == 0)
-            m = 0;
-        else {
-            std::sort(homework.begin(), homework.end());
-            if (size % 2 == 0)
-                m = (double)(homework[size/2] + homework[size/2 - 1])/2;
-            else 
-                m = (double)homework[size/2];
-            }
+            throw std::domain_error("negalima skaiciuoti medianos tusciam vektoriui");
+    
+        std::sort(homework.begin(), homework.end());
+        if (size % 2 == 0)
+            m = (double)(homework[size/2] + homework[size/2 - 1])/2;
+        else 
+            m = (double)homework[size/2];
+    
         
         return 0.4 * m + 0.6 * exam;
     }
@@ -59,11 +63,13 @@ struct stud {
 };
 
 void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr);
-void Read_from_file(vector<stud> &Students, int nr, int &longestName, int &longestSurname, string filename);
+void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename);
 void Write (vector<stud> &Students, int &longestName, int &longestSurname);
 bool Compare_By_firstName(const stud &a, const stud &b);
 void Sort_By_firstName(vector<stud> &Students);
-void New_Students (vector<stud> &Students, int nr, int &longestName, int &longestSurname);
-void Sort_Students_By_Average (int n, vector<stud> &Students);
+void New_Students (vector<stud> &Students, int &longestName, int &longestSurname);
+bool Passed (stud &a);
+void PrintByMarks (int n, vector<stud> &Students);
+vector<stud> SortByMarks(vector<stud> &Students);
 
 #endif

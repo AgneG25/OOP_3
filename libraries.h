@@ -14,6 +14,8 @@
 #include <string.h>
 #include <chrono>
 #include <ctype.h>
+#include <random>
+#include <stdexcept>
 
 using std::cout;
 using std::cin;
@@ -24,6 +26,7 @@ using std::setw;
 using std::setprecision;
 using std::fixed;
 using std::vector;
+using std::stable_partition;
 using namespace std::chrono;
 
 #endif

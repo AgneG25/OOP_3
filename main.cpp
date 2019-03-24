@@ -8,11 +8,13 @@ int main() {
     int longestName, longestSurname;
     int N = 3;
     vector<stud> Students;
+    //vector<stud> Weak;
+    string file = "kursiokai.txt";
     //Read(N, Students, longestName, longestSurname, nr);
-    //Read_from_file(Students, nr, longestName, longestSurname);
+    //Read_from_file(Students, longestName, longestSurname, file);
     //Sort_By_firstName(Students);
     //Write(Students, longestName, longestSurname);
-    New_Students (Students, nr, longestName, longestSurname);
+    New_Students (Students, longestName, longestSurname);
     auto end = high_resolution_clock::now();
     duration<double> diff = end-start;
     cout << "Visos programos veikimas uztruko: " << diff.count() << " s/n" << endl;
