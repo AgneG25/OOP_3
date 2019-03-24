@@ -25,7 +25,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 ##### Programos veikimo laikai, naudojant skirtingus konteinerius:
 
-###### VECTOR
+###### STD::VECTOR
 `10 elementų užpildymas užtruko: 0.000458382 s/n`
 
 `100 elementų užpildymas užtruko: 0.00274016 s/n`
@@ -39,7 +39,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 `Visos programos veikimas užtruko: 0.5089 s/n`
 
 ---
-###### LIST
+###### STD::LIST
 `10 elementų užpildymas užtruko: 0.000730686 s/n`
 
 `100 elementų užpildymas užtruko: 0.00124828 s/n`
@@ -53,7 +53,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 `Visos programos veikimas užtruko: 0.548188 s/n`
 
 ---
-###### DEQUE
+###### STD::DEQUE
 `10 elementu uzpildymas užtruko: 0.000673002 s/n`
 
 `100 elementų užpildymas užtruko: 0.000816094 s/n`
@@ -72,7 +72,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ##### 1 scenarijus
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 
-###### VECTOR
+###### STD::VECTOR
 10 elementu rusiavimas uztruko: 0.0000243400 s/n
 
 10 elementu spausdinimas uztruko: 0.0005911700 s/n
@@ -95,7 +95,7 @@ Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 
 Visos programos veikimas uztruko: 0.5563735260 s/n
 
-###### LIST
+###### STD::LIST
 
 10 elementu rusiavimas uztruko: 0.0000159940 s/n
 
@@ -119,7 +119,7 @@ Visos programos veikimas uztruko: 0.5563735260 s/n
 
 Visos programos veikimas uztruko: 0.4932038040 s/n
 
-###### DEQUE
+###### STD::DEQUE
 
 10 elementu rusiavimas uztruko: 0.0000154860 s/n
 
@@ -143,4 +143,106 @@ Visos programos veikimas uztruko: 0.4932038040 s/n
 
 Visos programos veikimas uztruko: 0.4539827490 s/n
 
+##### 2 scenarijus
+Tikrinami vidurkiai ir pagal juos sukuriamas naujas konteineris - Weak. Studentai, kurių vidurkiai mažesni nei 5, ištrinami iš bendro Studentų konteinerio.
 
+###### STD::VECTOR
+
+10 elementu rusiavimas uztruko: 0.0000099650 s/n
+
+10 elementu spausdinimas uztruko: 0.0001944810 s/n
+
+100 elementu rusiavimas uztruko: 0.0005331840 s/n
+
+100 elementu spausdinimas uztruko: 0.0003901860 s/n
+
+1000 elementu rusiavimas uztruko: 0.0353722400 s/n
+
+1000 elementu spausdinimas uztruko: 0.0027051590 s/n
+
+10000 elementu rusiavimas uztruko: 3.0878440760 s/n
+
+10000 elementu spausdinimas uztruko: 0.0203226890 s/n
+
+100000 elementu rusiavimas uztruko: 307.6575085890 s/n
+
+100000 elementu spausdinimas uztruko: 0.2071213460 s/n
+
+Visos programos veikimas uztruko: 311.1773747950 s/n
+
+###### STD::LIST
+
+10 elementu rusiavimas uztruko: 0.0000093820 s/n
+
+10 elementu spausdinimas uztruko: 0.0005290310 s/n
+
+100 elementu rusiavimas uztruko: 0.0000872540 s/n
+
+100 elementu spausdinimas uztruko: 0.0008157820 s/n
+
+1000 elementu rusiavimas uztruko: 0.0002282080 s/n
+
+1000 elementu spausdinimas uztruko: 0.0024728660 s/n
+
+10000 elementu rusiavimas uztruko: 0.0022942860 s/n
+
+10000 elementu spausdinimas uztruko: 0.0236559080 s/n
+
+100000 elementu rusiavimas uztruko: 0.0196709560 s/n
+
+100000 elementu spausdinimas uztruko: 0.1979247210 s/n
+
+Visos programos veikimas uztruko: 0.4074659810 s/n
+
+###### STD::DEQUE
+
+10 elementu rusiavimas uztruko: 0.0000333990 s/n
+
+10 elementu spausdinimas uztruko: 0.0006278310 s/n
+
+100 elementu rusiavimas uztruko: 0.0009192610 s/n
+
+100 elementu spausdinimas uztruko: 0.0012885280 s/n
+
+1000 elementu rusiavimas uztruko: 0.0221422810 s/n
+
+1000 elementu spausdinimas uztruko: 0.0029115740 s/n
+
+10000 elementu rusiavimas uztruko: 1.5468713770 s/n
+
+10000 elementu spausdinimas uztruko: 0.0237437000 s/n
+
+Šioje versijoje panaudotas std::stable_partitionion algoritmas.
+Programos greitis, naudojant šį algoritmą:
+
+###### STD::VECTOR
+
+10 elementu rusiavimas uztruko: 0.0000236620 s/n
+
+10 elementu spausdinimas uztruko: 0.0006508120 s/n
+
+100 elementu rusiavimas uztruko: 0.0002176750 s/n
+
+100 elementu spausdinimas uztruko: 0.0006770840 s/n
+
+1000 elementu rusiavimas uztruko: 0.0005846560 s/n
+
+1000 elementu spausdinimas uztruko: 0.0031081930 s/n
+
+10000 elementu rusiavimas uztruko: 0.0058959810 s/n
+
+10000 elementu spausdinimas uztruko: 0.0300132480 s/n
+
+100000 elementu rusiavimas uztruko: 0.0495097510 s/n
+
+100000 elementu spausdinimas uztruko: 0.2557404340 s/n
+
+Visos programos veikimas uztruko: 0.4582516000 s/n
+
+Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
+##### Programos paleidimas:
+* `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
+
+* `make`
+
+* `./main`
