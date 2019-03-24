@@ -68,7 +68,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 
 
 ---
-## [v1.0]
+## [v1.0](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v1.0)(2019-03-24)
 ##### 1 scenarijus
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 
