@@ -73,6 +73,7 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 
 ###### STD::VECTOR
+```
 10 elementu rusiavimas uztruko: 0.0000243400 s/n
 
 10 elementu spausdinimas uztruko: 0.0005911700 s/n
@@ -94,9 +95,9 @@ Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 100000 elementu spausdinimas uztruko: 0.2338830680 s/n
 
 Visos programos veikimas uztruko: 0.5563735260 s/n
-
+```
 ###### STD::LIST
-
+```
 10 elementu rusiavimas uztruko: 0.0000159940 s/n
 
 10 elementu spausdinimas uztruko: 0.0005599050 s/n
@@ -118,9 +119,9 @@ Visos programos veikimas uztruko: 0.5563735260 s/n
 100000 elementu spausdinimas uztruko: 0.2280732290 s/n
 
 Visos programos veikimas uztruko: 0.4932038040 s/n
-
+```
 ###### STD::DEQUE
-
+```
 10 elementu rusiavimas uztruko: 0.0000154860 s/n
 
 10 elementu spausdinimas uztruko: 0.0005208370 s/n
@@ -142,12 +143,12 @@ Visos programos veikimas uztruko: 0.4932038040 s/n
 100000 elementu spausdinimas uztruko: 0.2005428870 s/n
 
 Visos programos veikimas uztruko: 0.4539827490 s/n
-
+```
 ##### 2 scenarijus
 Tikrinami vidurkiai ir pagal juos sukuriamas naujas konteineris - Weak. Studentai, kurių vidurkiai mažesni nei 5, ištrinami iš bendro Studentų konteinerio.
 
 ###### STD::VECTOR
-
+```
 10 elementu rusiavimas uztruko: 0.0000099650 s/n
 
 10 elementu spausdinimas uztruko: 0.0001944810 s/n
@@ -169,9 +170,9 @@ Tikrinami vidurkiai ir pagal juos sukuriamas naujas konteineris - Weak. Studenta
 100000 elementu spausdinimas uztruko: 0.2071213460 s/n
 
 Visos programos veikimas uztruko: 311.1773747950 s/n
-
+```
 ###### STD::LIST
-
+```
 10 elementu rusiavimas uztruko: 0.0000093820 s/n
 
 10 elementu spausdinimas uztruko: 0.0005290310 s/n
@@ -193,9 +194,9 @@ Visos programos veikimas uztruko: 311.1773747950 s/n
 100000 elementu spausdinimas uztruko: 0.1979247210 s/n
 
 Visos programos veikimas uztruko: 0.4074659810 s/n
-
+```
 ###### STD::DEQUE
-
+```
 10 elementu rusiavimas uztruko: 0.0000333990 s/n
 
 10 elementu spausdinimas uztruko: 0.0006278310 s/n
@@ -211,12 +212,12 @@ Visos programos veikimas uztruko: 0.4074659810 s/n
 10000 elementu rusiavimas uztruko: 1.5468713770 s/n
 
 10000 elementu spausdinimas uztruko: 0.0237437000 s/n
-
+```
 Šioje versijoje panaudotas std::stable_partitionion algoritmas.
 Programos greitis, naudojant šį algoritmą:
 
 ###### STD::VECTOR
-
+```
 10 elementu rusiavimas uztruko: 0.0000236620 s/n
 
 10 elementu spausdinimas uztruko: 0.0006508120 s/n
@@ -238,7 +239,7 @@ Programos greitis, naudojant šį algoritmą:
 100000 elementu spausdinimas uztruko: 0.2557404340 s/n
 
 Visos programos veikimas uztruko: 0.4582516000 s/n
-
+```
 Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
 ##### Programos paleidimas:
 * `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
