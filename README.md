@@ -26,46 +26,39 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 ##### Programos veikimo laikai, naudojant skirtingus konteinerius:
 
 ###### STD::VECTOR
-`10 elementų užpildymas užtruko: 0.000458382 s/n`
 
-`100 elementų užpildymas užtruko: 0.00274016 s/n`
-
-`1000 elementų užpildymas užtruko: 0.00913537 s/`
-
-`10000 elementų užpildymas užtruko: 0.0201894 s/n`
-
-`100000 elementų užpildymas užtruko: 0.186875 s/n`
-
-`Visos programos veikimas užtruko: 0.5089 s/n`
+| Kiekis        | Trukmė (s/n) |        
+| ------------- |-------------:|
+| 10            | 0.000458382  |
+| 100           | 0.00274016   |
+| 1000          | 0.00913537   |
+| 10000         | 0.0201894    |
+| 100000        | 0.186875     |
+| Visa programa | 0.5089       |
 
 ---
 ###### STD::LIST
-`10 elementų užpildymas užtruko: 0.000730686 s/n`
 
-`100 elementų užpildymas užtruko: 0.00124828 s/n`
-
-`1000 elementų užpildymas užtruko: 0.0124355 s/n`
-
-`10000 elementų užpildymas užtruko: 0.0286396 s/n`
-
-`100000 elementų užpildymas užtruko: 0.238687 s/n`
-
-`Visos programos veikimas užtruko: 0.548188 s/n`
+| Kiekis        | Trukmė (s/n) |        
+| ------------- |-------------:|
+| 10            | 0.000730686  |
+| 100           | 0.00124828   |
+| 1000          | 0.0124355    |
+| 10000         | 0.0286396    |
+| 100000        | 0.238687     |
+| Visa programa | 0.548188     |
 
 ---
 ###### STD::DEQUE
-`10 elementu uzpildymas užtruko: 0.000673002 s/n`
 
-`100 elementų užpildymas užtruko: 0.000816094 s/n`
-
-`1000 elementų užpildymas užtruko: 0.00447744 s/n`
-
-`10000 elementų užpildymas užtruko: 0.0317397 s/n`
-
-`100000 elementų užpildymas užtruko: 0.267393 s/n`
-
-`Visos programos veikimas užtruko: 0.56778 s/n`
-
+| Kiekis        | Trukmė (s/n) |        
+| ------------- |-------------:|
+| 10            | 0.000673002  |
+| 100           | 0.000816094  |
+| 1000          | 0.00447744   |
+| 10000         | 0.0317397    |
+| 100000        | 0.267393     |
+| Visa programa | 0.56778      |
 
 ---
 ## [v1.0](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v1.0)(2019-03-24)
@@ -73,171 +66,90 @@ VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objp
 Duomenys iš bendro Studentų konteinerio išskaidomi į du: Strong ir Weak.
 
 ###### STD::VECTOR
+
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000243400 | 0.0005911700  |
+| 100           | 0.0001747690  | 0.0012181070  |
+| 1000          | 0.0018891290  | 0.0091860260   |
+| 10000         | 0.0065936000   |0.0241980220    |
+| 100000        | 0.0517505590 | 0.2338830680  |
+
 ```
-10 elementu rusiavimas uztruko: 0.0000243400 s/n
-
-10 elementu spausdinimas uztruko: 0.0005911700 s/n
-
-100 elementu rusiavimas uztruko: 0.0001747690 s/n
-
-100 elementu spausdinimas uztruko: 0.0012181070 s/n
-
-1000 elementu rusiavimas uztruko: 0.0018891290 s/n
-
-1000 elementu spausdinimas uztruko: 0.0091860260 s/n
-
-10000 elementu rusiavimas uztruko: 0.0065936000 s/n
-
-10000 elementu spausdinimas uztruko: 0.0241980220 s/n
-
-100000 elementu rusiavimas uztruko: 0.0517505590 s/n
-
-100000 elementu spausdinimas uztruko: 0.2338830680 s/n
-
 Visos programos veikimas uztruko: 0.5563735260 s/n
 ```
 ###### STD::LIST
+
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000159940 | 0.0005599050  |
+| 100           | 0.0001457720  | 0.0004429700  |
+| 1000          | 0.0005196130  | 0.0033575030   |
+| 10000         | 0.0049818810   |0.0270387750    |
+| 100000        | 0.0370642370 | 0.2280732290  |
+
 ```
-10 elementu rusiavimas uztruko: 0.0000159940 s/n
-
-10 elementu spausdinimas uztruko: 0.0005599050 s/n
-
-100 elementu rusiavimas uztruko: 0.0001457720 s/n
-
-100 elementu spausdinimas uztruko: 0.0004429700 s/n
-
-1000 elementu rusiavimas uztruko: 0.0005196130 s/n
-
-1000 elementu spausdinimas uztruko: 0.0033575030 s/n
-
-10000 elementu rusiavimas uztruko: 0.0049818810 s/n
-
-10000 elementu spausdinimas uztruko: 0.0270387750 s/n
-
-100000 elementu rusiavimas uztruko: 0.0370642370 s/n
-
-100000 elementu spausdinimas uztruko: 0.2280732290 s/n
-
 Visos programos veikimas uztruko: 0.4932038040 s/n
 ```
 ###### STD::DEQUE
+
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000154860 | 0.0005208370  |
+| 100           | 0.0001381620  | 0.0011169290  |
+| 1000          | 0.0016535360  | 0.0104824100   |
+| 10000         | 0.0039641510   |0.0210640090    |
+| 100000        | 0.0299174970 | 0.2005428870  |
+
 ```
-10 elementu rusiavimas uztruko: 0.0000154860 s/n
-
-10 elementu spausdinimas uztruko: 0.0005208370 s/n
-
-100 elementu rusiavimas uztruko: 0.0001381620 s/n
-
-100 elementu spausdinimas uztruko: 0.0011169290 s/n
-
-1000 elementu rusiavimas uztruko: 0.0016535360 s/n
-
-1000 elementu spausdinimas uztruko: 0.0104824100 s/n
-
-10000 elementu rusiavimas uztruko: 0.0039641510 s/n
-
-10000 elementu spausdinimas uztruko: 0.0210640090 s/n
-
-100000 elementu rusiavimas uztruko: 0.0299174970 s/n
-
-100000 elementu spausdinimas uztruko: 0.2005428870 s/n
-
 Visos programos veikimas uztruko: 0.4539827490 s/n
 ```
 ##### 2 scenarijus
 Tikrinami vidurkiai ir pagal juos sukuriamas naujas konteineris - Weak. Studentai, kurių vidurkiai mažesni nei 5, ištrinami iš bendro Studentų konteinerio.
 
 ###### STD::VECTOR
+
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000099650 | 0.0001944810  |
+| 100           | 0.0005331840  | 0.0003901860  |
+| 1000          | 0.0353722400  | 0.0027051590   |
+| 10000         | 3.0878440760   |0.0203226890    |
+| 100000        | 307.6575085890 | 0.2071213460  |
 ```
-10 elementu rusiavimas uztruko: 0.0000099650 s/n
-
-10 elementu spausdinimas uztruko: 0.0001944810 s/n
-
-100 elementu rusiavimas uztruko: 0.0005331840 s/n
-
-100 elementu spausdinimas uztruko: 0.0003901860 s/n
-
-1000 elementu rusiavimas uztruko: 0.0353722400 s/n
-
-1000 elementu spausdinimas uztruko: 0.0027051590 s/n
-
-10000 elementu rusiavimas uztruko: 3.0878440760 s/n
-
-10000 elementu spausdinimas uztruko: 0.0203226890 s/n
-
-100000 elementu rusiavimas uztruko: 307.6575085890 s/n
-
-100000 elementu spausdinimas uztruko: 0.2071213460 s/n
-
 Visos programos veikimas uztruko: 311.1773747950 s/n
 ```
 ###### STD::LIST
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000093820 | 0.0005290310  |
+| 100           | 0.0000872540  | 0.0008157820  |
+| 1000          | 0.0002282080  | 0.0024728660   |
+| 10000         | 0.0022942860   |0.0236559080    |
+| 100000        |0.0196709560 | 0.1979247210  |
 ```
-10 elementu rusiavimas uztruko: 0.0000093820 s/n
-
-10 elementu spausdinimas uztruko: 0.0005290310 s/n
-
-100 elementu rusiavimas uztruko: 0.0000872540 s/n
-
-100 elementu spausdinimas uztruko: 0.0008157820 s/n
-
-1000 elementu rusiavimas uztruko: 0.0002282080 s/n
-
-1000 elementu spausdinimas uztruko: 0.0024728660 s/n
-
-10000 elementu rusiavimas uztruko: 0.0022942860 s/n
-
-10000 elementu spausdinimas uztruko: 0.0236559080 s/n
-
-100000 elementu rusiavimas uztruko: 0.0196709560 s/n
-
-100000 elementu spausdinimas uztruko: 0.1979247210 s/n
-
 Visos programos veikimas uztruko: 0.4074659810 s/n
 ```
 ###### STD::DEQUE
-```
-10 elementu rusiavimas uztruko: 0.0000333990 s/n
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000333990 | 0.0006278310  |
+| 100           | 0.0009192610  | 0.0012885280  |
+| 1000          | 0.0221422810  | 0.0029115740   |
+| 10000         | 1.5468713770   |0.0237437000   |
 
-10 elementu spausdinimas uztruko: 0.0006278310 s/n
-
-100 elementu rusiavimas uztruko: 0.0009192610 s/n
-
-100 elementu spausdinimas uztruko: 0.0012885280 s/n
-
-1000 elementu rusiavimas uztruko: 0.0221422810 s/n
-
-1000 elementu spausdinimas uztruko: 0.0029115740 s/n
-
-10000 elementu rusiavimas uztruko: 1.5468713770 s/n
-
-10000 elementu spausdinimas uztruko: 0.0237437000 s/n
-```
 Šioje versijoje panaudotas std::stable_partitionion algoritmas.
 Programos greitis, naudojant šį algoritmą:
 
 ###### STD::VECTOR
+| Kiekis        | Rūšiavimas (s/n) | Spausdinimas (s/n) |        
+| ------------- |:----------------:|-------------:|
+| 10            | 0.0000236620 | 0.0006508120  |
+| 100           | 0.0002176750  | 0.0006770840  |
+| 1000          | 0.0005846560  | 0.0031081930   |
+| 10000         | 0.0058959810   |0.0300132480 |
+| 100000        |0.0495097510 |  0.2557404340  |
 ```
-10 elementu rusiavimas uztruko: 0.0000236620 s/n
-
-10 elementu spausdinimas uztruko: 0.0006508120 s/n
-
-100 elementu rusiavimas uztruko: 0.0002176750 s/n
-
-100 elementu spausdinimas uztruko: 0.0006770840 s/n
-
-1000 elementu rusiavimas uztruko: 0.0005846560 s/n
-
-1000 elementu spausdinimas uztruko: 0.0031081930 s/n
-
-10000 elementu rusiavimas uztruko: 0.0058959810 s/n
-
-10000 elementu spausdinimas uztruko: 0.0300132480 s/n
-
-100000 elementu rusiavimas uztruko: 0.0495097510 s/n
-
-100000 elementu spausdinimas uztruko: 0.2557404340 s/n
-
 Visos programos veikimas uztruko: 0.4582516000 s/n
 ```
 Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
