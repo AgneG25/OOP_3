@@ -169,7 +169,7 @@ Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
 | Kiekis        | Rūšiavimas (struct) | Spausdinimas (struct) | Rūšiavimas (class) | Spausdinimas (class) |    
 | ------------- |:-------------------:|----------------------:|:-------------------:|----------------------:|
 | 10000         | 0.007223147 | 0.030013248  | 0.007200259      | 0.028663370  |
-| 100000        | 0.051575420    | 0.030013248  | 0.054419516      | 0.230109362  |
+| 100000        | 0.051575420    | 0.248939708  | 0.054419516      | 0.230109362  |
 
 #### Optimizavimo flagų palyginimas:
 
