@@ -2,12 +2,26 @@
 #define FUNCTIONS_H
 #include "libraries.h"
 
-struct stud {
-    
+
+class stud {
+private:
     string firstName;
     string secondName;
     vector<double> homework;
     double exam;
+
+public:
+    stud() : exam(0) {}
+    void setFirstName (string x) { firstName = x; }
+    void setSecondName (string y) { secondName = y; }
+    void setExam (double e) { exam = e; }
+    void setMark (double mark) { homework.push_back(mark); }
+    
+    inline string getFirstName() const { return firstName; }
+    inline string getSecondName() const { return secondName; }
+    inline double getExam() const { return exam; }
+    int getMark(int a) const { return homework[a]; }
+    void cleanMark() { homework.clear(); }
 
     void RandomE() { //sugeneruojamas egzamino pazymys
         std::random_device rd;
@@ -54,15 +68,10 @@ struct stud {
         
         return 0.4 * m + 0.6 * exam;
     }
-    bool string_is_valid(const string x) {
-        string spec_char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        if (x.find_first_not_of(spec_char) != string::npos)
-            return false;
-        else return  true;
-    }
+    
 };
-
-void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr);
+bool string_is_valid(const string x);
+void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname);
 void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename);
 void Write (vector<stud> &Students, int &longestName, int &longestSurname);
 bool Compare_By_firstName(const stud &a, const stud &b);

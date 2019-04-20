@@ -6,7 +6,14 @@ void CheckLetter (string &name) {
         name[0] = toupper(name[0]);
 }
 
-void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname, int nr) {
+bool string_is_valid(const string x) {
+        string spec_char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (x.find_first_not_of(spec_char) != string::npos)
+            return false;
+        else return  true;
+    }
+
+void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname) {
 
     longestName = 0;
     longestSurname = 0;
@@ -18,26 +25,26 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
 
     
     for (int i = 0; i < N; i++){
-        S.homework.clear();
+        S.cleanMark();
         cout << "Iveskite studento varda ir pavarde: ";
         cin >> firstName >> secondName;
 
-            if(!(Students[i].string_is_valid(firstName))){
+            if(!(string_is_valid(firstName))){
             cout << "Iveskite varda is naujo, naudokite tik raides: ";
             cin.clear();
             cin.ignore(256, '\n');
             cin >> firstName;
             }
 
-            if (!(Students[i].string_is_valid(secondName))){
+            if (!(string_is_valid(secondName))){
                 cout << "Iveskite pavarde is naujo, naudokite tik raides: ";
                 cin.clear();
                 cin.ignore(256, '\n');
                 cin >> secondName;
             }
         
-        S.firstName = firstName;
-        S.secondName = secondName;
+        S.setFirstName(firstName);
+        S.setSecondName(secondName);
          
         cout << "Ar norite, kad pazymiai butu sugeneruojami automatiskai? t/n" << endl;
         cin >> ans;
@@ -69,7 +76,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
                 cin >> mark;
 
                 if(mark <= 10 && mark >=1){
-                S.homework.push_back(mark);
+                S.setMark(mark);
             }
             else {
                 while (!(mark <= 10 && mark >=1)){
@@ -87,7 +94,7 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
             cout << "Iveskite egzamino rezultata: ";
             cin >> exam;
             if (exam <= 10 && exam >=1) {
-                S.exam = exam;
+                S.setExam(exam);
             }
             else {
                 while (!(mark <= 10 && mark >=1)){
@@ -100,42 +107,47 @@ void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname,
         
         cout << endl;
         
-        if (S.firstName.size() > longestName) 
-            longestName = S.firstName.size();
-        if (S.secondName.size() > longestSurname) 
-            longestSurname = S.secondName.size();
+        if (S.getFirstName().size() > longestName) 
+            longestName = S.getFirstName().size();
+        if (S.getSecondName().size() > longestSurname) 
+            longestSurname = S.getSecondName().size();
         Students.push_back(S);
     }
     }
 //-------------------------------------------------------------------------
 void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurname, string filename) {
-    int mark;
+    int mark, exam;
     stud S = {};
     longestName = 0;
     longestSurname = 0;
+    string firstName, secondName;
 
     std::ifstream ifs (filename.c_str());
     
     while(!ifs.eof()){
 
-        ifs >> S.firstName >> S.secondName;
+        ifs >> firstName >> secondName;
 
-        CheckLetter(S.firstName);
-        CheckLetter(S.secondName);
+        CheckLetter(firstName);
+        CheckLetter(secondName);
 
-        ifs >> S.exam;
+        S.setFirstName(firstName);
+        S.setSecondName(secondName);
+       
+        ifs >> exam;
+        S.setExam(exam);
         
         if(ifs) {
-            S.homework.clear();
+            S.cleanMark();
             double mark;
-            while (ifs >> mark) S.homework.push_back(mark);
+            while (ifs >> mark) S.setMark(mark);
             ifs.clear();
         }
         
-        if (S.firstName.size() > longestName) 
-            longestName = S.firstName.size();
-        if (S.secondName.size() > longestSurname) 
-            longestSurname = S.secondName.size();
+        if (S.getFirstName().size() > longestName) 
+            longestName = S.getFirstName().size();
+        if (S.getSecondName().size() > longestSurname) 
+            longestSurname = S.getSecondName().size();
             Students.push_back(S);
     }
         Students.pop_back();
@@ -182,8 +194,8 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
     
     for (auto &i : Students) {
 
-        cout << left << setw(longestName + 2) << i.firstName;
-        cout << left << setw(longestSurname + 2) << i.secondName;
+        cout << left << setw(longestName + 2) << i.getFirstName();
+        cout << left << setw(longestSurname + 2) << i.getSecondName();
 
         if (a == 'm'){
             cout << left << setw(17) << fixed << setprecision(2) << i.Med();
@@ -207,7 +219,7 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
     }
 
 bool Compare_By_firstName(const stud &a, const stud &b) {
-    return a.firstName < b.firstName;
+    return a.getFirstName() < b.getFirstName();
 }
 
 void Sort_By_firstName(vector<stud> &Students) {
@@ -235,13 +247,13 @@ void PrintByMarks (int n, vector<stud> &Students) {
     std::ofstream rf2 (std::to_string(n) + "galvociai.txt");
     
     for (auto &i : Students) {
-        rf2 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
+        rf2 << i.getFirstName() << " " << i.getSecondName() << " " << i.Average() << endl;
         count++;
     }
     Students.clear();
 
     for (auto &i : Weak) {
-        rf1 << i.firstName << " " << i.secondName << " " << i.Average() << endl;
+        rf1 << i.getFirstName() << " " << i.getSecondName() << " " << i.Average() << endl;
         count++;
     }
     Weak.clear();
