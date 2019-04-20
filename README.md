@@ -1,6 +1,14 @@
 # OOP_antra_uzduotis
 VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objprog/paskaitos2019/wiki/2-oji-u%C5%BEduotis).
 
+##### Programos paleidimas:
+* `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
+
+* `make`
+
+* `./main`
+
+
 ## [V0.1](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.1) (2019-02-17)
 * Pirmoji programos versija.
 
@@ -153,9 +161,19 @@ Programos greitis, naudojant šį algoritmą:
 Visos programos veikimas uztruko: 0.4582516000 s/n
 ```
 Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
-##### Programos paleidimas:
-* `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
 
-* `make`
+## [v1.1](https://github.com/AgneG25/OOP_3/releases/tag/v1.1)(2019-04-20)
 
-* `./main`
+Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
+
+| Kiekis        | Rūšiavimas (struct) | Spausdinimas (struct) | Rūšiavimas (class) | Spausdinimas (class) |    
+| ------------- |:-------------------:|----------------------:|:-------------------:|----------------------:|
+| 10000         | 0.0058959810        | 0.0300132480  | 0.0072002590       | 0.0286633700  |
+| 100000        | 0.0495097510        | 0.0300132480  | 0.0544195160        | 0.2301093620  |
+
+#### Optimizavimo flagų palyginimas:
+
+| Kiekis   | Rūšiavimas (O1) | Spausdinimas (01) | Rūšiavimas (02) | Spausdinimas (02) |  Rūšiavimas (03) | Spausdinimas (03) |  
+| ------------- |:----------------:|------------------:|:---------------:|-----------:|:--------:|----------------:|
+| 10000         | 0.0014085780 | 0.0279241600 | 0.0014348750 | 0.0244293600 | 0.0013309620  | 0.0240394430  |
+| 100000        | 0.0126675130  | 0.2105425300 | 0.0130697010  | 0.2111906340  | 0.0127809250  | 0.2158424050  |
