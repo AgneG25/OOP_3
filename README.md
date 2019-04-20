@@ -1,5 +1,5 @@
-# OOP_antra_uzduotis
-VU ISI OOP 2 užduotis. Reikalavimus galite rasti [čia](https://github.com/objprog/paskaitos2019/wiki/2-oji-u%C5%BEduotis).
+# OOP trečia užduotis
+VU ISI OOP 3 užduotis. Reikalavimus galite rasti [čia](https://github.com/objprog/paskaitos2019/wiki/3-oji-u%C5%BEduotis).
 
 ##### Programos paleidimas:
 * `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
@@ -168,12 +168,12 @@ Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
 
 | Kiekis        | Rūšiavimas (struct) | Spausdinimas (struct) | Rūšiavimas (class) | Spausdinimas (class) |    
 | ------------- |:-------------------:|----------------------:|:-------------------:|----------------------:|
-| 10000         | 0.0058959810        | 0.0300132480  | 0.0072002590       | 0.0286633700  |
-| 100000        | 0.0495097510        | 0.0300132480  | 0.0544195160        | 0.2301093620  |
+| 10000         | 0.005895981      | 0.030013248  | 0.007200259      | 0.028663370  |
+| 100000        | 0.049509751      | 0.030013248  | 0.054419516      | 0.230109362  |
 
 #### Optimizavimo flagų palyginimas:
 
-| Kiekis   | Rūšiavimas (O1) | Spausdinimas (01) | Rūšiavimas (02) | Spausdinimas (02) |  Rūšiavimas (03) | Spausdinimas (03) |  
+| Kiekis   | Rūšiavimas (01) | Spausdinimas (01) | Rūšiavimas (02) | Spausdinimas (02) |  Rūšiavimas (03) | Spausdinimas (03) |  
 | ------------- |:----------------:|------------------:|:---------------:|-----------:|:--------:|----------------:|
-| 10000         | 0.0014085780 | 0.0279241600 | 0.0014348750 | 0.0244293600 | 0.0013309620  | 0.0240394430  |
-| 100000        | 0.0126675130  | 0.2105425300 | 0.0130697010  | 0.2111906340  | 0.0127809250  | 0.2158424050  |
+| 10000         | 0.001408578 | 0.027924160 | 0.001434875 | 0.024429360 | 0.001330962  | 0.024039443  |
+| 100000        | 0.012667513  | 0.210542530 | 0.013069701  | 0.211190634  | 0.012780925  | 0.215842405  |
