@@ -23,6 +23,43 @@ public:
     int getMark(int a) const { return homework[a]; }
     void cleanMark() { homework.clear(); }
 
+    friend std::ostream & operator << (std::ostream & out, const stud a) {
+        out << a.getFirstName() << " " << a.getSecondName() << " " << a.Average() << endl;
+        return out;
+    }
+
+    friend std::istream &operator >> (std::istream & in, stud& a) {
+        int marks;
+        int val;
+        cout << "Iveskite studento varda: ";
+        in >> a.firstName;
+        cout << "Iveskite studento pavarde: ";
+        in >> a.secondName;
+        cout << "Iveskite pazymiu skaiciu: ";
+        in >> marks;
+        for (int i = 0; i < marks; i++) {
+            cout << "Iveskite pazymi: ";
+            in >> val;
+            if (val < 1 || val > 10) {
+                cout << "Bloga reiksme, veskite is naujo" << endl;
+                i--;
+                continue;
+            }
+            a.homework.push_back(val);
+        }
+        cout << "Iveskite egzamino rezultata: ";
+        in >> val;
+        if (val < 1 || val > 10) a.exam = 1;
+        else a.exam = val;
+        return in;
+    }
+    friend bool operator == (const stud &a, const stud &b) { return a.Average() == b.Average(); }
+    friend bool operator != (const stud &a, const stud &b) { return a.Average() != b.Average(); }
+    friend bool operator > (const stud &a, const stud &b) { return a.getFirstName() > b.getFirstName(); }
+    friend bool operator < (const stud &a, const stud &b) { return a.getFirstName() < b.getFirstName(); }
+    friend bool operator >= (const stud &a, const stud &b) { return a.Average() >= b.Average(); }
+    friend bool operator <= (const stud &a, const stud &b) { return a.Average() <= b.Average(); }
+
     void RandomE() { //sugeneruojamas egzamino pazymys
         std::random_device rd;
         std::mt19937 mt(rd());
@@ -36,7 +73,7 @@ public:
         double r = dist(mt);
         homework.push_back(r);
     }
-    double Average() {
+    double Average() const {
         double S = 0;
         double ave = 0;
         
@@ -68,6 +105,7 @@ public:
         
         return 0.4 * m + 0.6 * exam;
     }
+
     
 };
 bool string_is_valid(const string x);

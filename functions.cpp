@@ -157,6 +157,7 @@ void Read_from_file(vector<stud> &Students, int &longestName, int &longestSurnam
 //-------------------------------------------------------------------------
 void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
 
+    Sort_By_firstName(Students);
     char a;
     cout << "Pasirinkite ka norite matyti: jei mediana, iveskite 'm', jei vidurki - 'v', jei abu - 'a'." << endl;
     cin >> a;
@@ -219,7 +220,7 @@ void Write (vector<stud> &Students, int &longestName, int &longestSurname) {
     }
 
 bool Compare_By_firstName(const stud &a, const stud &b) {
-    return a.getFirstName() < b.getFirstName();
+    return a < b;
 }
 
 void Sort_By_firstName(vector<stud> &Students) {
@@ -247,13 +248,13 @@ void PrintByMarks (int n, vector<stud> &Students) {
     std::ofstream rf2 (std::to_string(n) + "galvociai.txt");
     
     for (auto &i : Students) {
-        rf2 << i.getFirstName() << " " << i.getSecondName() << " " << i.Average() << endl;
+        rf2 << i;
         count++;
     }
     Students.clear();
 
     for (auto &i : Weak) {
-        rf1 << i.getFirstName() << " " << i.getSecondName() << " " << i.Average() << endl;
+        rf1 << i;
         count++;
     }
     Weak.clear();
