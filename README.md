@@ -162,7 +162,7 @@ Visos programos veikimas uztruko: 0.4582516000 s/n
 ```
 Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
 
-## [v1.1] (https://github.com/AgneG25/OOP_3/releases/tag/v1.1)(2019-04-20)
+## [v1.1](https://github.com/AgneG25/OOP_3/releases/tag/v1.1) (2019-04-20)
 
 Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
 
@@ -178,10 +178,10 @@ Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
 | 10000         | 0.001408578 | 0.027924160 | 0.001434875 | 0.024429360 | 0.001330962  | 0.024039443  |
 | 100000        | 0.012667513  | 0.210542530 | 0.013069701  | 0.211190634  | 0.012780925  | 0.215842405  |
 
-## [v1.2] (https://github.com/AgneG25/OOP_3/releases/tag/v1.2)(2019-04-28)
+## [v1.2](https://github.com/AgneG25/OOP_3/releases/tag/v1.2) (2019-04-28)
 
 * Realizuoti 8 skirtingi operatoriai, bet ne visi iš jų pritaikyti programoje.
 
-## [v1.5] (https://github.com/AgneG25/OOP_3/releases/tag/v1.5)(2019-05-05)
+## [v1.5](https://github.com/AgneG25/OOP_3/releases/tag/v1.5) (2019-05-05)
 
 * Sukurtos dvi klasės: bazine `Person` ir išvestine `stud`.
