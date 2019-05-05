@@ -3,15 +3,20 @@
 #include "libraries.h"
 
 
-class stud {
-private:
+class Person {
+protected:
     string firstName;
     string secondName;
     vector<double> homework;
     double exam;
 
 public:
-    stud() : exam(0) {}
+    Person() : exam(0) {}
+};
+
+class stud: public Person {
+public:
+    stud() : Person{}{ }
     void setFirstName (string x) { firstName = x; }
     void setSecondName (string y) { secondName = y; }
     void setExam (double e) { exam = e; }
@@ -106,7 +111,6 @@ public:
         return 0.4 * m + 0.6 * exam;
     }
 
-    
 };
 bool string_is_valid(const string x);
 void Read (int N, vector<stud> &Students, int &longestName, int &longestSurname);

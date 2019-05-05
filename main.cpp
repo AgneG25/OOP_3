@@ -38,9 +38,9 @@ int main() {
         Write (Students, longestName, longestSurname);
     } 
 
-    stud c;
-    cin >> c;
-    cout << c;
+    //stud c;
+    //cin >> c;
+    //cout << c;
 
     auto end = high_resolution_clock::now();
     duration<double> diff = end-start;
