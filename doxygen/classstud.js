@@ -1,0 +1,25 @@
+var classstud =
+[
+    [ "stud", "classstud.html#a717060a15471745c4a673f593ca66432", null ],
+    [ "Average", "classstud.html#ad779bb497179db63b116a844818ad2ea", null ],
+    [ "cleanMark", "classstud.html#a93dc63eea5bbab321d2cc183bd11e5c6", null ],
+    [ "getExam", "classstud.html#a0140eeb859070831b6ef10c1e10fadc5", null ],
+    [ "getFirstName", "classstud.html#a71e75318211ecd7ab3a7fb2ea0394f5d", null ],
+    [ "getMark", "classstud.html#afc49a0bde027587d93cfd0d61b4820d9", null ],
+    [ "getSecondName", "classstud.html#aaf1f66ed5cf2a61904ad90c84ac303ce", null ],
+    [ "Med", "classstud.html#a7b6de8f59909638b7bdc0bf7da264a17", null ],
+    [ "Random", "classstud.html#acab2f5fbe08dae5f3fdd2cae209e837b", null ],
+    [ "RandomE", "classstud.html#abeaf675ce8896d6c749572876fae52ea", null ],
+    [ "setExam", "classstud.html#a066be3b6be8f15fe315b27349aa9a0a9", null ],
+    [ "setFirstName", "classstud.html#af65c0e37a417f94e1527a1679f50d426", null ],
+    [ "setMark", "classstud.html#ac25e9c3adc55e154cb4af473416db75f", null ],
+    [ "setSecondName", "classstud.html#a7b2715602584d0aeb5f9dcc2a5059ef1", null ],
+    [ "operator!=", "classstud.html#a48c81cf2841c9c46a44594e21a43ccfd", null ],
+    [ "operator<", "classstud.html#a1cbe75592c58c7406ef114f53f7c21ad", null ],
+    [ "operator<<", "classstud.html#a450e707e53af4d8822bdd24d59a6606c", null ],
+    [ "operator<=", "classstud.html#a0a8b90b4962e5846ed39c6da01af243b", null ],
+    [ "operator==", "classstud.html#a4c783542dc4b2f60517f26567b91be5b", null ],
+    [ "operator>", "classstud.html#ad8991506358fca6b8c036aa6338d6c37", null ],
+    [ "operator>=", "classstud.html#acfa6a97238bb804f244c701ec6f92274", null ],
+    [ "operator>>", "classstud.html#ae51d0e59089e1a583455893edb0c213b", null ]
+];
