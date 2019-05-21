@@ -2,12 +2,77 @@
 VU ISI OOP 3 užduotis. Reikalavimus galite rasti [čia](https://github.com/objprog/paskaitos2019/wiki/3-oji-u%C5%BEduotis).
 
 ##### Programos paleidimas:
-* `git clone https://github.com/AgneG25/OOP_antra_uzduotis.git`
+* `git clone https://github.com/AgneG25/OOP_3.git`
 
 * `make`
 
 * `./main`
 
+## [v1.1](https://github.com/AgneG25/OOP_3/releases/tag/v1.1) (2019-04-20)
+
+Programa pakoreguota, pritaikyta veikimui su `class'ėmis`.
+
+| Kiekis        | Rūšiavimas (struct) | Spausdinimas (struct) | Rūšiavimas (class) | Spausdinimas (class) |    
+| ------------- |:-------------------:|----------------------:|:-------------------:|----------------------:|
+| 10000         | 0.007223147 | 0.030013248  | 0.007200259      | 0.028663370  |
+| 100000        | 0.051575420    | 0.248939708  | 0.054419516      | 0.230109362  |
+
+#### Optimizavimo flagų palyginimas:
+
+| Kiekis   | Rūšiavimas (01) | Spausdinimas (01) | Rūšiavimas (02) | Spausdinimas (02) |  Rūšiavimas (03) | Spausdinimas (03) |  
+| ------------- |:----------------:|------------------:|:---------------:|-----------:|:--------:|----------------:|
+| 10000         | 0.001408578 | 0.027924160 | 0.001434875 | 0.024429360 | 0.001330962  | 0.024039443  |
+| 100000        | 0.012667513  | 0.210542530 | 0.013069701  | 0.211190634  | 0.012780925  | 0.215842405  |
+
+## [v1.2](https://github.com/AgneG25/OOP_3/releases/tag/v1.2) (2019-04-28)
+
+* Realizuoti 8 skirtingi operatoriai, bet ne visi iš jų pritaikyti programoje.
+
+## [v1.5](https://github.com/AgneG25/OOP_3/releases/tag/v1.5) (2019-05-05)
+
+* Sukurtos dvi klasės: bazine `Person` ir išvestine `stud`.
+
+## [v2.0](https://github.com/AgneG25/OOP_3/releases/tag/v2.0) (2019-05-21)
+
+* Sukurta Doxygen dokumentacija: sukurtos klasių diagramos, grafiškai pavaizduoti programoje naudojamų funkcijų sąryšiai ir panašiai.
+
+* Realizuoti Unit testai, naudojant Googletests framework'ą. Sukūriau 3 testus, tikrinančius mano programos veikimą.
+
+```c++
+TEST(Exam, Function) {
+    stud S;
+    ASSERT_EQ(0, S.getExam()); //PASSED
+    ASSERT_EQ(4, S.getExam()); //FAILED
+}
+```
+Šis testas tikrina konstruktoriaus veikimą (konstruktorius turi automatiškai priskirti egzaminui nulio reikšmę, jei nepasakytą kitaip). 
+
+```c++
+TEST(Answer, Function) {
+
+    ASSERT_EQ(1, string_is_valid("Vardas"));   //PASSED
+    ASSERT_EQ(0, string_is_valid("Vardas11")); //PASSED
+    ASSERT_EQ(1, string_is_valid("Vardas11")); //FAILED
+}
+```
+Šis testas tikrina funkcijos `string_is_valid` veikimą (bool funkcija grąžina TRUE reikšmę, jei `string` sudarytas tik iš raidžių).
+
+```c++
+TEST(Name, Function) {
+    stud S;
+    S.setFirstName("Vardas");
+    ASSERT_EQ("Vardas", S.getFirstName());  //PASSED
+    ASSERT_EQ("Vardas1", S.getFirstName()); //FAILED
+}
+```
+Šis testas tikrina metodus `setFirstName()` ir `getFirstName()`, kurie dirba su objekto vardu.
+
+# Norint paleisti Unit testus, reikia:
+* `git clone https://github.com/AgneG25/OOP_3`
+* cd tests
+* cmake CMakeLists.txt
+* make
+* ./executeTests
 
 ## [V0.1](https://github.com/AgneG25/OOP_antra_uzduotis/releases/tag/v0.1) (2019-02-17)
 * Pirmoji programos versija.
@@ -162,26 +227,3 @@ Visos programos veikimas uztruko: 0.4582516000 s/n
 ```
 Galime pastebėti, kad programa veikia žymiai greičiau, kai naudojama std:stable_partition.
 
-## [v1.1](https://github.com/AgneG25/OOP_3/releases/tag/v1.1) (2019-04-20)
-
-Programa pakoreguota, pritaikyta veikimui su `class'ėmis'.
-
-| Kiekis        | Rūšiavimas (struct) | Spausdinimas (struct) | Rūšiavimas (class) | Spausdinimas (class) |    
-| ------------- |:-------------------:|----------------------:|:-------------------:|----------------------:|
-| 10000         | 0.007223147 | 0.030013248  | 0.007200259      | 0.028663370  |
-| 100000        | 0.051575420    | 0.248939708  | 0.054419516      | 0.230109362  |
-
-#### Optimizavimo flagų palyginimas:
-
-| Kiekis   | Rūšiavimas (01) | Spausdinimas (01) | Rūšiavimas (02) | Spausdinimas (02) |  Rūšiavimas (03) | Spausdinimas (03) |  
-| ------------- |:----------------:|------------------:|:---------------:|-----------:|:--------:|----------------:|
-| 10000         | 0.001408578 | 0.027924160 | 0.001434875 | 0.024429360 | 0.001330962  | 0.024039443  |
-| 100000        | 0.012667513  | 0.210542530 | 0.013069701  | 0.211190634  | 0.012780925  | 0.215842405  |
-
-## [v1.2](https://github.com/AgneG25/OOP_3/releases/tag/v1.2) (2019-04-28)
-
-* Realizuoti 8 skirtingi operatoriai, bet ne visi iš jų pritaikyti programoje.
-
-## [v1.5](https://github.com/AgneG25/OOP_3/releases/tag/v1.5) (2019-05-05)
-
-* Sukurtos dvi klasės: bazine `Person` ir išvestine `stud`.
