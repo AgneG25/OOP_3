@@ -26,11 +26,34 @@ Programa pakoreguota, pritaikyta veikimui su `class'ėmis`.
 
 ## [v1.2](https://github.com/AgneG25/OOP_3/releases/tag/v1.2) (2019-04-28)
 
-* Realizuoti 8 skirtingi operatoriai, bet ne visi iš jų pritaikyti programoje.
+* Realizuoti 8 skirtingi operatoriai:
+```c++
+friend std::ostream & operator << (std::ostream & out, const stud a)
+friend std::istream &operator >> (std::istream & in, stud& a)
+friend bool operator == (const stud &a, const stud &b)
+friend bool operator != (const stud &a, const stud &b)
+friend bool operator > (const stud &a, const stud &b)
+friend bool operator < (const stud &a, const stud &b)
+friend bool operator >= (const stud &a, const stud &b)
+friend bool operator <= (const stud &a, const stud &b)
+```
 
 ## [v1.5](https://github.com/AgneG25/OOP_3/releases/tag/v1.5) (2019-05-05)
 
 * Sukurtos dvi klasės: bazine `Person` ir išvestine `stud`.
+Bazinė klasė `Person`:
+```c++
+class Person {
+protected:
+    string firstName;
+    string secondName;
+    vector<double> homework;
+    double exam;
+
+public:
+    Person() : exam(0) {}
+};
+```
 
 ## [v2.0](https://github.com/AgneG25/OOP_3/releases/tag/v2.0) (2019-05-21)
 
